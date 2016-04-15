@@ -1,7 +1,7 @@
 
 (1) Use raspi-config to enable the SPI module.
 
-(3) Install the dependencies
+(2) Install the dependencies
 sudo apt-get -y install python-dev python-netifaces
 sudo pip install spidev
 
