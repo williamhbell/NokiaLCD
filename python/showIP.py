@@ -49,10 +49,11 @@ noki.text(fillStr("IP address..."))
 time.sleep(3)
 
 try:
+  print("Type CTRL-C to exit.")
   while 1:
     noki.cls()
     addrs = addresses()
-    noki.text(fillStr("Address IP:"))
+    noki.text(fillStr("IP address:"))
     for a in addrs:
       noki.text(fillStr(a))
     time.sleep(2)

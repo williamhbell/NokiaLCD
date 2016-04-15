@@ -1,26 +1,9 @@
 
-(1) Edit and uncomment "blacklist i2c-bcm2708"
-sudo vi /etc/modprobe.d/raspi-blacklist.conf
+(1) Use raspi-config to enable the SPI module.
 
-# blacklist spi and i2c by default (many users don't need them)
-
-#blacklist spi-bcm2708
-blacklist i2c-bcm2708
-
-(2) Load kernel module
-sudo modprobe spi-bcm2708
-
-(3) Build dependencies
-sudo apt-get -y install git-core
-sudo apt-get update
-sudo apt-get -y upgrade
-git clone git://git.drogon.net/wiringPi
-cd wiringPi
-./build
-cd ..
-sudo apt-get -y install python-imaging python-imaging-tk python-pip python-dev git
+(3) Install the dependencies
+sudo apt-get -y install python-dev python-netifaces
 sudo pip install spidev
-sudo pip install wiringpi
 
 (3) Shutdown pi
 sudo shutdown -h now
@@ -40,5 +23,12 @@ sudo shutdown -h now
 
 (Adafruit cobbler and jumper wires or another connection solution.)
 
-(5) Power up Pi and run
-sudo python magpiLCD.py
+(5) Power up the Raspberry Pi and run an example
+cd python
+./showIP.py
+
+OR
+
+cd python
+./showMagPiImg.py
+

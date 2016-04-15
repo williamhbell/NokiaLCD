@@ -12,6 +12,8 @@ from nokiaSPI import NokiaSPI
 noki = NokiaSPI()
 
 try:
+  print("Type CTRL-C to exit.")
+
   # Load the image on the screen
   noki.load_bitmap("../images/MagPi-nokia-bw-rotated-mc.bmp",True)
 
