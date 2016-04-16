@@ -32,7 +32,7 @@ SCRIPTNAME=$script_path
 start() {
   log_action_msg "Starting IP address display"
   cd \$DAEMON_PATH
-  PID=`\$DAEMON \$DAEMONOPTS > /dev/null 2>&1 & echo \$!`
+  PID=\$(\$DAEMON \$DAEMONOPTS > /dev/null 2>&1 & echo \$!)
   if [ -z \$PID ]; then
     return 1
   else
@@ -43,7 +43,7 @@ start() {
 
 stop() {
   log_action_msg "Stopping IP address display"
-  PID=`cat \$PIDFILE`
+  PID=\$(cat \$PIDFILE)
   cd \$DAEMON_PATH
   if [ -f \$PIDFILE ]; then
     kill -HUP \$PID
