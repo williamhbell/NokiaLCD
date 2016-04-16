@@ -58,7 +58,7 @@ try:
       noki.text(fillStr(a))
     time.sleep(2)
 except KeyboardInterrupt:
-  print("Exiting")
-  noki.cleanup()
+  pass
 finally:
   print("Finished")
+  noki.cleanup()
