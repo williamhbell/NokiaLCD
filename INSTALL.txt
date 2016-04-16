@@ -31,4 +31,3 @@ OR
 
 cd python
 ./showMagPiImg.py
-
